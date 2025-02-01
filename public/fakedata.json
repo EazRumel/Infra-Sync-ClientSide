@@ -1,0 +1,143 @@
+[
+  {
+    "apartment_image": "https://images.ctfassets.net/pg6xj64qk0kh/2r4QaBLvhQFH1mPGljSdR9/39b737d93854060282f6b4a9b9893202/camden-paces-apartments-buckhead-ga-terraces-living-room-with-den_1.jpg",
+    "floor_no": 1,
+    "block_name": "A",
+    "apartment_no": "A-101",
+    "rent":1650
+  },
+  {
+    "apartment_image": "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
+    "floor_no": 2,
+    "block_name": "A",
+    "apartment_no": "A-202",
+    "rent":1750
+  },
+  {
+    "apartment_image": "https://media.istockphoto.com/id/1365649825/photo/stylish-micro-apartment-for-one.jpg?s=612x612&w=0&k=20&c=B84a7PkFLhZGTG0GPDOxBs2yDjBvy2NHaqZw5_Vp878=",
+    "floor_no": 3,
+    "block_name": "A",
+    "apartment_no": "A-303",
+    "rent":1500
+  },
+  {
+    "apartment_image": "https://d28pk2nlhhgcne.cloudfront.net/assets/app/uploads/sites/3/2022/11/modern-studio-apartment-1220x671.jpg",
+    "floor_no": 4,
+    "block_name": "A",
+    "apartment_no": "A-404",
+    "rent":1100
+  },
+  {
+    "apartment_image": "https://i.pinimg.com/736x/61/3a/34/613a3455e5564262f6e50ae8aa36451d.jpg",
+    "floor_no": 5,
+    "block_name": "A",
+    "apartment_no": "A-505",
+    "rent":1250
+  },
+  {
+    "apartment_image": "https://cdngeneral.rentcafe.com/dmslivecafe/2/84577/kitchen.png?width=480&quality=90",
+    "floor_no": 1,
+    "block_name": "B",
+    "apartment_no": "B-101",
+    "rent":1550
+  },
+  {
+    "apartment_image": "https://rentpath-res.cloudinary.com/t_3x2_fixed_webp_lg/2acf7ebeda7b323c1ddbe33b28977a38",
+    "floor_no": 2,
+    "block_name": "B",
+    "apartment_no": "B-202",
+    "rent":1340
+  },
+  {
+    "apartment_image": "https://www.luxurychicagoapartments.com/wp-content/uploads/2023/03/Seven-10-West-2-Bedroom-06.jpg",
+    "floor_no": 3,
+    "block_name": "B",
+    "apartment_no": "B-303",
+    "rent":1150
+  },
+  {
+    "apartment_image": "https://cdn.mos.cms.futurecdn.net/PXMxJFYT5pBsSuKPqn8cvD-320-80.jpg",
+    "floor_no": 4,
+    "block_name": "B",
+    "apartment_no": "B-404",
+    "rent":1550
+  },
+  {
+    "apartment_image": "https://en.idei.club/uploads/posts/2023-03/thumbs/1678745033_en-idei-club-p-luxury-apartment-bedroom-dizain-pinterest-59.jpg",
+    "floor_no": 5,
+    "block_name": "B",
+    "apartment_no": "B-505",
+    "rent":1400
+  },
+  {
+    "apartment_image": "https://c8.alamy.com/comp/HXCGJT/luxury-apartment-in-london-HXCGJT.jpg",
+    "floor_no": 1,
+    "block_name": "C",
+    "apartment_no": "C-101",
+    "rent":1200
+  },
+  {
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb-btC2Np0XYwoYJgTrgIHe-ZWuIG2bQbFoll-mUMDvxb2l8NReaIN1bqu0t_FW30vGHk&usqp=CAU",
+    "floor_no": 2,
+    "block_name": "C",
+    "apartment_no": "C-202",
+    "rent":1350
+  },
+  {
+    "apartment_image": "https://d1mpcfeub08oq2.cloudfront.net/catalogue/1200x800/02b9fff7242522e38c54ff7f71c1a051.jpg",
+    "floor_no": 3,
+    "block_name": "C",
+    "apartment_no": "C-303",
+    "rent":1250
+  },
+  {
+    "apartment_image": "https://www.austincontrarian.com/wp-content/uploads/2024/08/018e2e8398f4d222c6359080134e7109.jpg",
+    "floor_no": 4,
+    "block_name": "C",
+    "apartment_no": "C-404",
+    "rent":1450
+
+  },
+  {
+    "apartment_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTESNc6RapqWJHTt514RZ_UDLBw886OAjgYpTF6aGViv33kaY1izsbbNHffBBn8AXnZVo4&usqp=CAU",
+    "floor_no": 5,
+    "block_name": "C",
+    "apartment_no": "C-505",
+    "rent":1450
+  },
+  {
+    "apartment_image": "https://www.austincontrarian.com/wp-content/uploads/2024/08/833097c7f163d073dc63a70ad1569ca8-525x328.webp",
+    "floor_no": 1,
+    "block_name": "D",
+    "apartment_no": "D-101",
+    "rent":1550
+  },
+  {
+    "apartment_image": "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?cs=srgb&dl=pexels-john-tekeridis-21837-1428348.jpg&fm=jpg",
+    "floor_no": 2,
+    "block_name": "D",
+    "apartment_no": "D-202",
+    "rent":1200
+  },
+  {
+    "apartment_image": "https://thumbs.dreamstime.com/b/modern-home-interior-6585037.jpg",
+    "floor_no": 3,
+    "block_name": "D",
+    "apartment_no": "D-303",
+    "rent":1340
+  },
+  {
+    "apartment_image": "https://thumbs.dreamstime.com/b/modern-living-room-mansion-luxury-50743959.jpg",
+    "floor_no": 4,
+    "block_name": "D",
+    "apartment_no": "D-404",
+    "rent":1300
+  },
+  {
+    "apartment_image": "https://thumbs.dreamstime.com/b/modern-apartment-interior-grey-sofa-footstool-armcha-armchair-wooden-floor-tv-colorful-graphic-photo-concept-122713421.jpg",
+    "floor_no": 5,
+    "block_name": "D",
+    "apartment_no": "D-505",
+    "rent":1550
+  }
+]

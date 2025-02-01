@@ -8,7 +8,11 @@ const Navbar = () => {
      <li className="text-teal-400 hover:text-teal-200">
      <Link to="/">Home</Link>
      </li>
+     <li className="text-teal-400 hover:text-teal-200">
+     <Link to="/apartment">Apartment</Link>
+     </li>
   </>
+  
   return (
     <div className="navbar  max-w-screen-xl mx-auto z-10 bg-opacity-30 bg-base-100 shadow-sm">
     <div className="navbar-start">
