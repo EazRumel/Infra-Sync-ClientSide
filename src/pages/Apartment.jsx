@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import ApartmentCard from "../assets/components/ApartmentCard";
+
 import { Helmet } from "react-helmet-async";
+import ApartmentCard from "../components/ApartmentCard";
 
 
 const Apartment = () => {

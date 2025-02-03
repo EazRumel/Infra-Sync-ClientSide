@@ -4,10 +4,11 @@ import lottieAnimation from "../assets/lottie2.json"
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
 
 
 const RegisterPage = () => {
-  const {newUser} = useContext(AuthContext)
+  const { newUser } = useContext(AuthContext)
   const handleRegister = (event) =>{
     event.preventDefault();
     const form = event.target
@@ -15,7 +16,24 @@ const RegisterPage = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photo, email, password)
+    // console.log(name, photo, email, password)
+    newUser(email,password)
+    .then(result =>{
+      console.log(result)
+      Swal.fire({
+        title: "Registered Successfully!",
+        icon: "success",
+        draggable: true
+      });
+    })
+    .catch(error=>{
+      console.log(error.message);
+      Swal.fire({
+        title: "Registration Failed!",
+        icon: "error",
+        draggable: true
+      });
+    })
   }
   return (
    <div>
