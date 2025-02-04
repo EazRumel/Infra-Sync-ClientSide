@@ -139,5 +139,75 @@
     "block_name": "D",
     "apartment_no": "D-505",
     "rent":1550
-  }
+  },
+  {
+    "apartment_image": "https://images.prop24.com/340352934/Crop508x373",
+    "floor_no": 1,
+    "block_name": "E",
+    "apartment_no": "E-101",
+    "rent": 1250
+  },
+  {
+    "apartment_image": "https://images.prop24.com/338019892/Crop600x400",
+    "floor_no": 2,
+    "block_name": "E",
+    "apartment_no": "E-202",
+    "rent": 1350
+  },
+{
+  "apartment_image": "https://cdn.universityliving.com/cms/KNZqNogqmQ9mN4d8n7rlYzqeYTYNRg.jpg",
+  "floor_no": 3,
+  "block_name": "E",
+  "apartment_no": "E-303",
+  "rent": 1450
+},
+{
+  "apartment_image": "https://images.rentuncle.co.za/photos/3215419-20156325d1fcd397/1-Bed-Apartment-in-Maboneng.jpg",
+  "floor_no": 4,
+  "block_name": "E",
+  "apartment_no": "E-404",
+  "rent": 1550
+},
+{
+  "apartment_image": "https://images.prop24.com/301319791/Crop600x400",
+  "floor_no": 5,
+  "block_name": "E",
+  "apartment_no": "E-505",
+  "rent": 1650
+},
+{
+  "apartment_image": "https://helium.privateproperty.co.za/live-za-images/property/285/23/6846285/images/property-6846285-18573154_e.jpg",
+  "floor_no": 6,
+  "block_name": "E",
+  "apartment_no": "E-606",
+  "rent": 1750
+},
+{
+  "apartment_image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1138373864624782226/original/edbdd277-579a-472e-aed3-91c6b1d9e3fe.jpeg?im_w=720&im_format=avif",
+  "floor_no": 1,
+  "block_name": "F",
+  "apartment_no": "F-101",
+  "rent": 1300
+},
+{
+  "apartment_image": "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1138371780024554996/original/1489b62b-1e67-4329-ac8e-9af2dab375b9.jpeg?im_w=720&im_format=avif",
+  "floor_no": 2,
+  "block_name": "F",
+  "apartment_no": "F-202",
+  "rent": 1400
+},
+{
+  "apartment_image": "https://resource.rentcafe.com/image/upload/q_auto,f_auto,c_fill,w_576,ar_1.384,g_auto/s3/2/142481/mp%20bnb_008.png",
+  "floor_no": 3,
+  "block_name": "F",
+  "apartment_no": "F-303",
+  "rent": 1500
+},
+{
+  "apartment_image": "https://ulcdn.universityliving.com/cms/L7qJTT6it2N7CXxca0FuUsJyZ9Z7FV.jpg?format=auto&width=1920",
+  "floor_no": 4,
+  "block_name": "F",
+  "apartment_no": "F-404",
+  "rent": 1600
+}
 ]

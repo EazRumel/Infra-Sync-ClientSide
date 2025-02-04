@@ -23,10 +23,10 @@ const ApartmentCard = ({apartment}) => {
       className="rounded-xl w-full" />
   </figure>
   <div className="card-body items-center text-center">
-    <h2 className="card-title">Apartment Number:{apartment.apartment_no}</h2>
-    <p>Floor Number:{apartment.floor_no}</p>
-    <p>Block Number:{apartment.block_name}</p>
-    <p>Rent:{apartment.rent}</p>
+    <h2 className="card-title text-teal-500">Apartment Number:{apartment.apartment_no}</h2>
+    <p className="">Floor Number:{apartment.floor_no}</p>
+    <p className="">Block Number:{apartment.block_name}</p>
+    <p className="">$:{apartment.rent}</p>
     <div className="card-actions">
       <button className="btn bg-teal-500 hover:bg-teal-300 text-white">Agreement</button>
     </div>
