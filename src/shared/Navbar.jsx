@@ -61,6 +61,13 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="navbar-end">
+    <div className="w-8 rounded-x">
+    <p></p>
+    <img
+    className="rounded-xl"
+      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+      alt="Tailwind-CSS-Avatar-component" />
+  </div>
     {
       user ?  <> 
       <button onClick={handleLogOut}><button className="btn btn-link text-teal-400 btn-accent">Logout <CiLogout /></button></button>
@@ -68,6 +75,7 @@ const Navbar = () => {
        :
        <><Link to="/login"><button className="btn btn-link text-teal-400 btn-accent">Login <CiLogin /></button></Link></>
     }
+    
     </div>
   </div>
   );

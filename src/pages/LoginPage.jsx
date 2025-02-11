@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import lottieAnimation from "../assets/lottie.json"
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
@@ -12,6 +12,9 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 const LoginPage = () => {
    const captchaRef = useRef(null);
    const [disabled,setDisabled] = useState(true)
+   const location = useLocation()
+   const navigate = useNavigate()
+   const from = location.state?.from.pathname || "/"
    const handleCaptcha = (event) =>{
     const captchaValue = captchaRef.current.value;
     console.log(captchaValue)
@@ -51,6 +54,7 @@ const LoginPage = () => {
         icon: "success",
         draggable: true
       });
+      navigate(from,{replace:true})
     })
     .catch(error=>{
           console.log(error.message)
@@ -59,6 +63,7 @@ const LoginPage = () => {
             icon: "error",
             draggable: true
           });
+          
         })
   }
   return (

@@ -1,7 +1,7 @@
 import Lottie from 'lottie-react';
 import React, { useContext } from 'react';
 import lottieAnimation from "../assets/lottie2.json"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
@@ -10,6 +10,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 
 
 const RegisterPage = () => {
+  const navigate = useNavigate()
   const { newUser } = useContext(AuthContext)
   const handleRegister = (event) =>{
     event.preventDefault();
@@ -27,6 +28,7 @@ const RegisterPage = () => {
         icon: "success",
         draggable: true
       });
+      navigate("/")
     })
     .catch(error=>{
       console.log(error.message);
