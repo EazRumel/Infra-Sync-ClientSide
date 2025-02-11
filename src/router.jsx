@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import Apartment from "./pages/Apartment";
 import ErrorPage from "./pages/ErrorPage";
+import PrivateRoute from "./provider/PrivateRoute";
 
 
 
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
       },
       {
         path:"/apartment",
-        element:<Apartment></Apartment>
+        element:<PrivateRoute>
+          <Apartment></Apartment>
+        </PrivateRoute>
       },
       {
         path:"/login",

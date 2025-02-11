@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { auth } from '../firebase/firebaseInit';
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
+import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 
 
 const LoginPage = () => {

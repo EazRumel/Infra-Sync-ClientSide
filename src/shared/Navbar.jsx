@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from "../assets/icons8-building-sci-fi-96.png"
-import { CiLogin } from 'react-icons/ci';
+import { CiLogin, CiLogout } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../provider/AuthProvider';
 
 const Navbar = () => {
+  const {user,logOut} = useContext(AuthContext)
+  const handleLogOut = () => {
+    logOut()
+    .then(() =>{})
+    .catch(error =>{
+      // console.log(error.message)
+    })
+  }
   const links = <>
      <li className="text-teal-400 hover:text-teal-200">
      <Link to="/">Home</Link>
@@ -52,7 +61,13 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="navbar-end">
-    <Link to="/login"><button className="btn btn-link text-teal-400 btn-accent">Login <CiLogin /></button></Link>
+    {
+      user ?  <> 
+      <button onClick={handleLogOut}><button className="btn btn-link text-teal-400 btn-accent">Logout <CiLogout /></button></button>
+       </>
+       :
+       <><Link to="/login"><button className="btn btn-link text-teal-400 btn-accent">Login <CiLogin /></button></Link></>
+    }
     </div>
   </div>
   );
