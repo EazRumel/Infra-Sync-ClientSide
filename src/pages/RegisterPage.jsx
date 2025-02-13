@@ -11,7 +11,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, val
 
 const RegisterPage = () => {
   const navigate = useNavigate()
-  const { newUser } = useContext(AuthContext)
+  const { newUser,updateUserProfile } = useContext(AuthContext)
   const handleRegister = (event) =>{
     event.preventDefault();
     const form = event.target
@@ -28,6 +28,7 @@ const RegisterPage = () => {
         icon: "success",
         draggable: true
       });
+      updateUserProfile({displayName:name,photoURL:photo})
       navigate("/")
     })
     .catch(error=>{

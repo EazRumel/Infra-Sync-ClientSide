@@ -3,6 +3,7 @@ import logo from "../assets/icons8-building-sci-fi-96.png"
 import { CiLogin, CiLogout } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext)
@@ -61,20 +62,52 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="navbar-end">
-    <div className="w-8 rounded-x">
-    <p></p>
-    <img
-    className="rounded-xl"
-      src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-      alt="Tailwind-CSS-Avatar-component" />
-  </div>
+    
+  <div className="dropdown dropdown-start mx-20 my-7">
+  <div tabIndex={0} role="button" className="btn m-1">
     {
+      user && user.email ? <>
+      <div className="w-8 rounded-x">
+      <img className="w-10 rounded-full cursor-pointer mr-2" src={user?.photoURL} data-tooltip-content={user?.displayName || "No name available"} data-tooltip-id="user-tooltip" /> 
+
+
+<ReactTooltip
+id="user-tooltip"
+place="bottom"
+type="dark"
+effect="solid"
+/>
+      </div>
+</> : <>
+<div className="w-8 rounded-x">
+<img src="https://www.webiconio.com/_upload/255/image_255.svg" alt="" />
+    </div>
+</>
+    }
+  </div>
+  <ul tabIndex={0} className="dropdown-content menu  z-1  p-2 shadow-sm">
+  {
       user ?  <> 
+     
+      <li className="text-teal-400 hover:text-teal-200">
+     <Link to="/dashboard">Dashboard</Link>
+     </li>
       <button onClick={handleLogOut}><button className="btn btn-link text-teal-400 btn-accent">Logout <CiLogout /></button></button>
        </>
        :
-       <><Link to="/login"><button className="btn btn-link text-teal-400 btn-accent">Login <CiLogin /></button></Link></>
+       <>
+       <div className="w-8 rounded-x">
+    <p></p>
+    
+  </div>
+       <li className="text-teal-400 hover:text-teal-200">
+     <Link to="/dashboard">Dashboard</Link>
+     </li>
+       <Link to="/login"><button className="btn btn-link text-teal-400 btn-accent">Login <CiLogin /></button></Link></>
     }
+  </ul>
+</div>
+   
     
     </div>
   </div>

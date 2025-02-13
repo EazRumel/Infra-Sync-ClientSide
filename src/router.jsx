@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage";
 import Apartment from "./pages/Apartment";
 import ErrorPage from "./pages/ErrorPage";
 import PrivateRoute from "./provider/PrivateRoute";
+import Dashboard from "./layouts/Dashboard/Dashboard";
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path:"/register",
         element:<RegisterPage></RegisterPage>
+      },
+      {
+        path:"/dashboard",
+        element:<Dashboard></Dashboard>
       }
     ]
   },
