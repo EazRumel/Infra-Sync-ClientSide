@@ -11,7 +11,7 @@ const Navbar = () => {
     logOut()
     .then(() =>{})
     .catch(error =>{
-      // console.log(error.message)
+      // //console.log(error.message)
     })
   }
   const links = <>
@@ -63,7 +63,7 @@ const Navbar = () => {
     </div>
     <div className="navbar-end">
     
-  <div className="dropdown dropdown-start mx-20 my-7">
+  <div className="dropdown dropdown-start mx-16 mt-4 mb-7">
   <div tabIndex={0} role="button" className="btn m-1">
     {
       user && user.email ? <>

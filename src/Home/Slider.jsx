@@ -5,6 +5,7 @@ import 'react-awesome-slider/dist/styles.css';
 const AutoplaySlider = withAutoplay(AwesomeSlider);
 import apartment from "../assets/Apartment2.jpg"
 import apartment2 from "../assets/Apartment3.jpg"
+import Navbar from '../shared/Navbar';
 
 const Slider = () => {
   return (

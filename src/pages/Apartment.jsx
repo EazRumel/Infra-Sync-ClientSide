@@ -29,7 +29,7 @@ const Apartment = () => {
     <hr className="text-teal-500" />
       <div className="my-10 grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 mx-10">
        {
-        apartments.map(apartment => <ApartmentCard key={apartment._id} apartment={apartment}></ApartmentCard>)
+        apartments.map(apartment => <ApartmentCard key={apartment._id}  apartment={apartment}></ApartmentCard>)
        }
     </div>
     

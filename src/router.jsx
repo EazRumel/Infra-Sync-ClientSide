@@ -10,6 +10,7 @@ import Apartment from "./pages/Apartment";
 import ErrorPage from "./pages/ErrorPage";
 import PrivateRoute from "./provider/PrivateRoute";
 import Dashboard from "./layouts/Dashboard/Dashboard";
+import Agreement from "./components/Agreement";
 
 
 
@@ -26,9 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/apartment",
-        element:<PrivateRoute>
-          <Apartment></Apartment>
-        </PrivateRoute>
+        element:<Apartment></Apartment>
       },
       {
         path:"/login",
@@ -40,7 +39,17 @@ const router = createBrowserRouter([
       },
       {
         path:"/dashboard",
-        element:<Dashboard></Dashboard>
+        element:<Dashboard></Dashboard>,
+        // children:
+        // [
+        //   {
+
+        //   }
+        // ]
+      },
+      {
+        path:"/agreement/:id",
+        element:<Agreement></Agreement>,
       }
     ]
   },

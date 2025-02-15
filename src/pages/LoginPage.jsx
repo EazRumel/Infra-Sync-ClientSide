@@ -17,7 +17,7 @@ const LoginPage = () => {
    const from = location.state?.from.pathname || "/"
    const handleCaptcha = (event) =>{
     const captchaValue = captchaRef.current.value;
-    console.log(captchaValue)
+    //console.log(captchaValue)
     if(validateCaptcha(captchaValue)){
       setDisabled(false);
     }
@@ -32,7 +32,7 @@ const LoginPage = () => {
   const handleGoogleLogin = () =>{
     sigInWithGoogle(auth)
     .then(result =>{
-      console.log(result);
+      //console.log(result);
       Swal.fire({
         title: "Logged In Successfully With Google!",
         icon: "success",
@@ -45,10 +45,10 @@ const LoginPage = () => {
     const form = event.target
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email,password)
+    //console.log(email,password)
     signInUser(email,password)
     .then(result =>{
-      console.log(result)
+      //console.log(result)
       Swal.fire({
         title: "Logged In Successfully!",
         icon: "success",
@@ -57,7 +57,7 @@ const LoginPage = () => {
       navigate(from,{replace:true})
     })
     .catch(error=>{
-          console.log(error.message)
+          //console.log(error.message)
           Swal.fire({
             title: "Login Failed!",
             icon: "error",
