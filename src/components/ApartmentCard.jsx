@@ -1,15 +1,35 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const ApartmentCard = ({ apartment }) => {
   const {user} = useAuth()
+  const location = useLocation()
   const navigate = useNavigate()
   const handleAgreement = (agreement) => {
-
+  console.log(agreement)
   //  console.log("User",user.email)
+  
    if(user && user?.email){
-
+    const agreementData = {
+      userEmail:user.email,
+      userName:user.displayName,
+      apartment_no:agreement.apartment_no,
+      floor_no:agreement.floor_no,
+      block_name:agreement.block_name,
+      rent:agreement.rent,
+      apartment_image:agreement.apartment_image 
+    }
+    axios.post("http://localhost:3000/agreement",agreementData)
+    .then(response =>{
+      console.log(response.data) 
+      if(response.data.insertedId){
+        toast.success("Request for agreement sent successfully!")
+      } 
+    })
+    
    }
    else {
     Swal.fire({
@@ -22,7 +42,7 @@ const ApartmentCard = ({ apartment }) => {
       confirmButtonText: "Yes, log in!"
     }).then((result) => {
       if (result.isConfirmed) {
-        navigate("/login")
+        navigate("/login",{state:{from:location}})
       }
     });
    }

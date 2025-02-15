@@ -13,6 +13,7 @@ const LoginPage = () => {
    const captchaRef = useRef(null);
    const [disabled,setDisabled] = useState(true)
    const location = useLocation()
+   console.log(location.state)
    const navigate = useNavigate()
    const from = location.state?.from.pathname || "/"
    const handleCaptcha = (event) =>{

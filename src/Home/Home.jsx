@@ -14,7 +14,9 @@ const Home = () => {
     {/* <hr className="my-10 text-teal-500" /> */}
     <div className="my-20">
     <AboutBuilding></AboutBuilding>
+
     </div>
+
     </div>
     </div> 
   );
