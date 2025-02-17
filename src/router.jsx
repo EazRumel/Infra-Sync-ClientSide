@@ -11,6 +11,7 @@ import ErrorPage from "./pages/ErrorPage";
 import PrivateRoute from "./provider/PrivateRoute";
 import Dashboard from "./layouts/Dashboard/Dashboard";
 import Agreement from "./components/Agreement";
+import MyAgreement from "./pages/MyAgreement";
 
 
 
@@ -38,21 +39,22 @@ const router = createBrowserRouter([
         element:<RegisterPage></RegisterPage>
       },
       {
-        path:"/dashboard",
-        element:<Dashboard></Dashboard>,
-        // children:
-        // [
-        //   {
-
-        //   }
-        // ]
-      },
-      {
         path:"/agreement/:id",
         element:<Agreement></Agreement>,
       }
     ]
   },
+  {
+    path:"/dashboard",
+    element:<Dashboard></Dashboard>,
+    errorElement:<ErrorPage></ErrorPage>,
+    children:[
+      {
+     path:"myAgreement",
+     element:<MyAgreement></MyAgreement>
+    }
+  ]
+  }
 ]);
 
 export default router;

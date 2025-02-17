@@ -4,14 +4,18 @@ import { CiLogin, CiLogout } from 'react-icons/ci';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../provider/AuthProvider';
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import { FaRegThumbsUp } from 'react-icons/fa';
+import useAgreement from '../hooks/useAgreement';
+
 
 const Navbar = () => {
+  const [agreement] = useAgreement()
   const {user,logOut} = useContext(AuthContext)
   const handleLogOut = () => {
     logOut()
     .then(() =>{})
     .catch(error =>{
-      // //console.log(error.message)
+       //console.log(error.message)
     })
   }
   const links = <>
@@ -21,6 +25,11 @@ const Navbar = () => {
      <li className="text-teal-400 hover:text-teal-200">
      <Link to="/apartment">Apartment</Link>
      </li>
+     {/* <li>
+     <Link to="/dashboard/myAgreement" className="btn">
+  Inbox <btn className="badge badge-sm badge-secondary"><FaRegThumbsUp />{agreement.length}</btn>
+</Link>
+     </li> */}
   </>
   
   return (

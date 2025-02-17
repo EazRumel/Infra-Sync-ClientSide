@@ -1,16 +1,19 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import Swal from "sweetalert2";
-import axios from "axios";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../hooks/useAxiosSecure";
+import useAgreement from "../hooks/useAgreement";
 
 const ApartmentCard = ({ apartment }) => {
+  const [,refetch] = useAgreement()
+  const axiosSecure = useAxiosSecure()
   const {user} = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
   const handleAgreement = (agreement) => {
   console.log(agreement)
-  //  console.log("User",user.email)
+  // console.log("User",user.email)
   
    if(user && user?.email){
     const agreementData = {
@@ -20,16 +23,17 @@ const ApartmentCard = ({ apartment }) => {
       floor_no:agreement.floor_no,
       block_name:agreement.block_name,
       rent:agreement.rent,
-      apartment_image:agreement.apartment_image 
+      apartment_image:agreement.apartment_image,
+      status:"pending"
     }
-    axios.post("http://localhost:3000/agreement",agreementData)
+    axiosSecure.post("/agreement",agreementData)
     .then(response =>{
       console.log(response.data) 
       if(response.data.insertedId){
         toast.success("Request for agreement sent successfully!")
       } 
     })
-    
+    refetch();
    }
    else {
     Swal.fire({
