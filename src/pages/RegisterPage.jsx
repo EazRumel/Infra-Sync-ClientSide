@@ -5,12 +5,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import useAuth from '../hooks/useAuth';
+import usePublicAxios from '../hooks/usePublicAxios';
 // import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
 
 
 const RegisterPage = () => {
 const [errorMessage,setErrorMessage] = useState("")
+const axiosPublic = usePublicAxios()
 //console.log(errorMessage)
   const { newUser, updateUserProfile, setUser } = useAuth()
   const navigate = useNavigate()
@@ -22,23 +24,39 @@ const [errorMessage,setErrorMessage] = useState("")
     const email = form.email.value;
     const password = form.password.value;
     //console.log(name, photo, email, password) 
-    const passwordRegex = /^(?=.[A-Za-z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    if(passwordRegex.test(password)){
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+
+    if(!passwordRegex.test(password)){
       setErrorMessage("Password must have one uppercase one lower case one character")
       return;
     }
     setErrorMessage("")
     newUser(email, password)
+    
       .then(result => {
         // const user = result.user;
         // setUser(user);
-        //console.log(result)
-        Swal.fire({
-          title: "Registered Successfully!",
-          icon: "success",
-          draggable: true
-        });
+        console.log(result)
+        
         updateUserProfile({ displayName: name, photoURL: photo })
+        .then(()=> {
+          const userInfo = {
+            userName :name,
+            userEmail:email
+          }
+          axiosPublic.post("/users",userInfo)
+          .then(response => {
+            if(response.data.insertedId){
+              console.log("user added to the database",response.data)
+              Swal.fire({
+                title: "Registered Successfully!",
+                icon: "success",
+                draggable: true
+              });
+            }
+          })
+        })
         navigate("/")
       })
       .catch(error => {
