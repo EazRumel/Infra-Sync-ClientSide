@@ -12,6 +12,8 @@ import PrivateRoute from "./provider/PrivateRoute";
 import Dashboard from "./layouts/Dashboard/Dashboard";
 import Agreement from "./components/Agreement";
 import MyAgreement from "./pages/MyAgreement";
+import UserDashboard from "./layouts/Dashboard/UserDashboard/UserDashboard";
+import MyProfile from "./layouts/Dashboard/UserDashboard/MyProfile";
 
 
 
@@ -52,7 +54,20 @@ const router = createBrowserRouter([
       {
      path:"myAgreement",
      element:<MyAgreement></MyAgreement>
-    }
+    },
+    {
+      path:"userDashboard",
+      element:<PrivateRoute>
+        <UserDashboard></UserDashboard>
+      </PrivateRoute>
+    },
+    // {
+    //   path:"userProfile",
+    //   element:<PrivateRoute>
+    //     <MyProfile></MyProfile>
+    //   </PrivateRoute>
+
+    // }
   ]
   }
 ]);
