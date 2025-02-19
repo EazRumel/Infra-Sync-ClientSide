@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import useAuth from '../hooks/useAuth';
 import usePublicAxios from '../hooks/usePublicAxios';
+import SocialLogin from '../shared/SocialLogin';
 // import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 
 
@@ -55,9 +56,19 @@ const axiosPublic = usePublicAxios()
                 draggable: true
               });
             }
+            else if (response.data.message === "User Already Exists") { 
+              // ✅ Show Swal alert when user exists
+              Swal.fire({
+                title: "User Already Exists!",
+                text: "Please try logging in.",
+                icon: "warning",
+                draggable: true
+              });
+            }
+            navigate("/") 
           })
         })
-        navigate("/")
+        
       })
       .catch(error => {
         //console.log(error.message);
@@ -102,6 +113,7 @@ const axiosPublic = usePublicAxios()
                 </div>
                 <button className="btn text-white mt-4 bg-teal-400 hover:bg-teal-200">Register</button>
               </form>
+              <SocialLogin></SocialLogin>
             </div>
           </div>
         </div>

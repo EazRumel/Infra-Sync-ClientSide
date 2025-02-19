@@ -16,17 +16,14 @@ const Dashboard = () => {
   <NavLink to="/"><FaHome />My Home</NavLink>
   </li>
   <li>
-  <li>
-     <NavLink to="/dashboard/userDashboard"><CgProfile />
-  My Profile
-</NavLink>
+     <NavLink to="/dashboard/userDashboard"><CgProfile />My Profile</NavLink>
      </li>
   <li>
      <NavLink to="/dashboard/userDashboard"><GrAnnounce />
   Announcements
 </NavLink>
      </li>
-  </li>
+
  </ul>
 </div>
 <div>
