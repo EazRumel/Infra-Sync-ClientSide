@@ -56,12 +56,13 @@ const axiosPublic = usePublicAxios()
                 draggable: true
               });
             }
+
+            // if user already exists then this else if will work
             else if (response.data.message === "User Already Exists") { 
-              // ✅ Show Swal alert when user exists
+
               Swal.fire({
-                title: "User Already Exists!",
-                text: "Please try logging in.",
-                icon: "warning",
+                title: "Registered Successfully!",
+                icon: "success",
                 draggable: true
               });
             }

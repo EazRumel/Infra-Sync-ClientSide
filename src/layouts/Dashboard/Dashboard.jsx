@@ -4,15 +4,47 @@ import useAgreement from '../../hooks/useAgreement';
 import { FaHome, FaRegThumbsUp } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { GrAnnounce } from 'react-icons/gr';
-
+import Navbar from '../../shared/Navbar';
+import { MdAdminPanelSettings, MdRememberMe } from 'react-icons/md';
+import { BsFillFileEarmarkRuledFill } from 'react-icons/bs';
+import { RiCoupon3Line } from 'react-icons/ri';
 
 const Dashboard = () => {
   const [agreement] = useAgreement()
+  const isAdmin = true;
   return (
     <div className="flex "> 
 <div className="w-64 min-h-screen bg-teal-600">
  <ul className="menu p-4">
+
+  { 
+    isAdmin ? <>
+   
+    <li>
+  <NavLink to="/"><MdAdminPanelSettings />Admin Profile</NavLink>
+  </li>
   <li>
+     <NavLink to="/dashboard/userDashboard"><MdRememberMe/>Manage Members</NavLink>
+     </li>
+  <li>
+     <NavLink to="/dashboard/userDashboard"><GrAnnounce />
+  Make Announcements
+</NavLink>
+     </li>
+  <li>
+     <NavLink to="/dashboard/userDashboard"><BsFillFileEarmarkRuledFill />
+  Agreement Requests
+</NavLink>
+     </li>
+  <li>
+     <NavLink to="/dashboard/userDashboard"><RiCoupon3Line />
+  Manage Coupons
+</NavLink>
+     </li>
+    </>
+     : 
+     <>
+    <li>
   <NavLink to="/"><FaHome />My Home</NavLink>
   </li>
   <li>
@@ -23,6 +55,8 @@ const Dashboard = () => {
   Announcements
 </NavLink>
      </li>
+    </>
+  }
 
  </ul>
 </div>
