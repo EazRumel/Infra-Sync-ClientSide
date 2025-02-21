@@ -58,14 +58,14 @@ const axiosPublic = usePublicAxios()
             }
 
             // if user already exists then this else if will work
-            else if (response.data.message === "User Already Exists") { 
+            // else if (response.data.message === "User Already Exists") { 
 
-              Swal.fire({
-                title: "Registered Successfully!",
-                icon: "success",
-                draggable: true
-              });
-            }
+            //   Swal.fire({
+            //     title: "Registered Successfully!",
+            //     icon: "success",
+            //     draggable: true
+            //   });
+            // }
             navigate("/") 
           })
         })

@@ -9,14 +9,14 @@ const SocialLogin = () => {
   const axiosPublic = usePublicAxios();
   const navigate = useNavigate();
   const handleGoogleLogin = () =>{
-    sigInWithGoogle(auth)
+    sigInWithGoogle()
     .then(result =>{
       console.log(result);
-      const userInfoWithGoogle = {
+      const userInfo = {
         userName : result.user?.displayName,
         userEmail : result.user?.email
       }
-      axiosPublic.post("/users",userInfoWithGoogle)
+      axiosPublic.post("/users",userInfo)
       .then(response =>{
         console.log(response.data)
         Swal.fire({

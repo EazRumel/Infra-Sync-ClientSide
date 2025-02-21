@@ -24,7 +24,7 @@ const Dashboard = () => {
   <NavLink to="/"><MdAdminPanelSettings />Admin Profile</NavLink>
   </li>
   <li>
-     <NavLink to="/dashboard/userDashboard"><MdRememberMe/>Manage Members</NavLink>
+     <NavLink to="/dashboard/manageMembers"><MdRememberMe/>Manage Members</NavLink>
      </li>
   <li>
      <NavLink to="/dashboard/userDashboard"><GrAnnounce />

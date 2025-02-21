@@ -14,6 +14,7 @@ import Agreement from "./components/Agreement";
 import MyAgreement from "./pages/MyAgreement";
 import UserDashboard from "./layouts/Dashboard/UserDashboard/UserDashboard";
 import MyProfile from "./layouts/Dashboard/UserDashboard/MyProfile";
+import ManageMembers from "./layouts/Dashboard/AdminDashboard/ManageMembers";
 
 
 
@@ -67,7 +68,12 @@ const router = createBrowserRouter([
     //     <MyProfile></MyProfile>
     //   </PrivateRoute>
 
-    // }
+    // },
+   
+    {
+      path:"manageMembers",
+      element:<ManageMembers></ManageMembers>
+    }
   ]
   }
 ]);
