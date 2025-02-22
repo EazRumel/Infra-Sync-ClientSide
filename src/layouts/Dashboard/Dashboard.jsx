@@ -4,13 +4,13 @@ import useAgreement from '../../hooks/useAgreement';
 import { FaHome, FaRegThumbsUp } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { GrAnnounce } from 'react-icons/gr';
-import Navbar from '../../shared/Navbar';
 import { MdAdminPanelSettings, MdRememberMe } from 'react-icons/md';
 import { BsFillFileEarmarkRuledFill } from 'react-icons/bs';
 import { RiCoupon3Line } from 'react-icons/ri';
+import { CiHome } from 'react-icons/ci';
+import { GoHomeFill } from 'react-icons/go';
 
 const Dashboard = () => {
-  const [agreement] = useAgreement()
   const isAdmin = true;
   return (
     <div className="flex "> 
@@ -32,7 +32,7 @@ const Dashboard = () => {
 </NavLink>
      </li>
   <li>
-     <NavLink to="/dashboard/userDashboard"><BsFillFileEarmarkRuledFill />
+     <NavLink to="/dashboard/agreementRequest"><BsFillFileEarmarkRuledFill />
   Agreement Requests
 </NavLink>
      </li>
@@ -41,6 +41,8 @@ const Dashboard = () => {
   Manage Coupons
 </NavLink>
      </li>
+     <div className="divider"></div>
+     <li><NavLink to="/"><GoHomeFill />Home</NavLink></li>
     </>
      : 
      <>
@@ -55,6 +57,7 @@ const Dashboard = () => {
   Announcements
 </NavLink>
      </li>
+     <div className="divider"></div>
     </>
   }
 

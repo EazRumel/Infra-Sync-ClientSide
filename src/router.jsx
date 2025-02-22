@@ -53,7 +53,7 @@ const router = createBrowserRouter([
     errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
-     path:"myAgreement",
+     path:"agreementRequest",
      element:<MyAgreement></MyAgreement>
     },
     {

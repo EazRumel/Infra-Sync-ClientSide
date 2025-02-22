@@ -25,9 +25,7 @@ const SocialLogin = () => {
           draggable: true
         })
         navigate("/")
-        
       })
-      
       })
       
   }
