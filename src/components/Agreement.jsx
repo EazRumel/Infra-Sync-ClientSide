@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 
 const Agreement = () => {
   const {id} = useParams();
-  const {user} = useAuth()
+  const {user} = useAuth();
    //console.log(user)
   const location = useLocation();
   const apartment = location.state?.apartment

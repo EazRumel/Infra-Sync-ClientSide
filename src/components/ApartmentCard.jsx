@@ -24,6 +24,7 @@ const ApartmentCard = ({ apartment }) => {
       block_name:agreement.block_name,
       rent:agreement.rent,
       apartment_image:agreement.apartment_image,
+      agreementDate:new Date(),
       status:"pending"
     }
     axiosSecure.post("/agreement",agreementData)
@@ -67,7 +68,7 @@ const ApartmentCard = ({ apartment }) => {
     //     </div>
     //   </div>
     // </div>
-    <div className="card bg-base-100  shadow-sm">
+    <div className="card bg-base-100 transform transition-transform  shadow-sm duration-400 hover:scale-105">
       <figure className="px-10 pt-10">
         <img
           src={apartment.apartment_image}
@@ -82,7 +83,6 @@ const ApartmentCard = ({ apartment }) => {
         <div className="card-actions">
             <button onClick={()=>handleAgreement(apartment)} className="btn bg-teal-500 hover:bg-teal-300 text-white">Agreement</button>
         </div>
-
       </div>
     </div>
   );
