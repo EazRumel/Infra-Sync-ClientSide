@@ -24,12 +24,12 @@ console.log(agreement)
         <div key={item._id} className="card w-96 bg-base-100 card-md shadow-sm">
           <div className="card-body">
             <h2 className="card-title">Apartment No:{item.apartment_no}</h2>
-            <p>Name:{item.userName}</p>
-            <p>Email:{item.userEmail}</p>
-            <p>Floor No:{item.floor_no}</p>
-            <p>Block No:{item.block_no}</p>
-            <p>Rent:{item.rent}</p>
-            <p>Request Date:{item.agreementDate}</p>
+            <p>Name: {item.userName}</p>
+            <p>Email: {item.userEmail}</p>
+            <p>Floor No: {item.floor_no}</p>
+            <p>Block No: {item.block_name}</p>
+            <p>Rent: {item.rent}</p>
+            <p>Request Date: {item.agreementDate}</p>
             <div className="justify-end card-actions">
               {/* <button className="btn btn-primary">Buy Now</button> */}
               <button className="btn btn-ghost bg-teal-400 text-white">Accept</button>
