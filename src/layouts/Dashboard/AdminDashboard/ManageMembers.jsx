@@ -75,7 +75,6 @@ const ManageMembers = () => {
         })
       }
     </tbody>
-    
   </table>
 </div>
     </div>
