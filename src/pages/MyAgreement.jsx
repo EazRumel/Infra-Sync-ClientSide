@@ -1,14 +1,46 @@
 import { useEffect, useState } from 'react';
 import useAgreementPub from '../hooks/userAgreementPub';
 import { MdTextRotateVertical } from 'react-icons/md';
+import Swal from 'sweetalert2';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 // import useAgreement from '../hooks/useAgreement';
 
 
 const MyAgreement = () => {
 
 
-  const [agreement] = useAgreementPub()
-  const totalRent = agreement.reduce((total,item)=>total + item.rent,0) 
+  const [agreement] = useAgreementPub();
+  const axiosSecure = useAxiosSecure();
+  const totalRent = agreement.reduce((total,item) => total + item.rent,0) //this accumulates and calculates the whole rent.that's why reduce is being used.
+  const handleReject = (id) => {
+
+    Swal.fire({
+  title: "Are you sure?",
+  text: "You won't be able to revert this!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, delete it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+    axiosSecure.delete(`/agreement/${id}`)
+    .then(response =>{
+     if(response.data.deletedCount > 0){
+
+     Swal.fire({
+      title: "Deleted!",
+      text: "Your file has been deleted.",
+      icon: "success"
+
+    })
+    }
+    })
+  }
+  
+});
+
+  }
 
   
   // const [agreements,setAgreements] = useState(0)
@@ -19,7 +51,7 @@ const MyAgreement = () => {
   //   useAgreement(setAgreements)
   // },[])
 
-console.log(agreement) 
+// console.log(agreement) 
 
   return (
     <div>
@@ -40,7 +72,7 @@ console.log(agreement)
             <div className="justify-end card-actions">
               {/* <button className="btn btn-primary">Buy Now</button> */}
               <button className="btn btn-ghost bg-teal-400 text-white">Accept</button>
-              <button className="btn btn-ghost bg-red-400 text-white">Reject</button>
+              <button onClick={()=>handleReject(item._id)} className="btn btn-ghost bg-red-400 text-white">Reject</button>
             </div>
           </div>
         </div>

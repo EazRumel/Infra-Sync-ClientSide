@@ -1,4 +1,5 @@
 const CouponCard = ({cou}) => {
+  
   return (
     <div className="flex justify-center items-center min-h-screen ">
     <div className="card bg-base-100 shadow-xl transform transition-transform duration-300 scale-100 hover:scale-105">
