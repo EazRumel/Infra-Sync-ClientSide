@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import useAgreementPub from '../hooks/userAgreementPub';
+import { MdTextRotateVertical } from 'react-icons/md';
 // import useAgreement from '../hooks/useAgreement';
 
 
@@ -7,6 +8,9 @@ const MyAgreement = () => {
 
 
   const [agreement] = useAgreementPub()
+  const totalRent = agreement.reduce((total,item)=>total + item.rent,0) 
+
+  
   // const [agreements,setAgreements] = useState(0)
 
 
@@ -18,7 +22,10 @@ const MyAgreement = () => {
 console.log(agreement) 
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 my-10 mx-5">
+    <div>
+      <h2 className="text-right mr-10 text-2xl text-teal-500">Requests : {agreement.length}</h2>
+      <h2 className="text-left ml-10 text-2xl text-teal-500">Total Rent : {totalRent}</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 my-10 mx-5">
     {
       agreement.map(item => (
         <div key={item._id} className="card w-96 bg-base-100 card-md shadow-sm">
@@ -40,6 +47,8 @@ console.log(agreement)
       ))
     }
   </div>
+    </div>
+    
   );
 };
 
