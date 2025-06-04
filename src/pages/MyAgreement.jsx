@@ -9,7 +9,7 @@ import useAxiosSecure from '../hooks/useAxiosSecure';
 const MyAgreement = () => {
 
 
-  const [agreement] = useAgreementPub();
+  const [agreement,refetch] = useAgreementPub();
   const axiosSecure = useAxiosSecure();
   const totalRent = agreement.reduce((total,item) => total + item.rent,0) //this accumulates and calculates the whole rent.that's why reduce is being used.
   const handleReject = (id) => {
@@ -27,7 +27,7 @@ const MyAgreement = () => {
     axiosSecure.delete(`/agreement/${id}`)
     .then(response =>{
      if(response.data.deletedCount > 0){
-
+     refetch()
      Swal.fire({
       title: "Deleted!",
       text: "Your file has been deleted.",

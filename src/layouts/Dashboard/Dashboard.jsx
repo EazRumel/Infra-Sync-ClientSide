@@ -9,9 +9,11 @@ import { BsFillFileEarmarkRuledFill } from 'react-icons/bs';
 import { RiCoupon3Line } from 'react-icons/ri';
 import { CiHome } from 'react-icons/ci';
 import { GoHomeFill } from 'react-icons/go';
+import useAgreementPub from '../../hooks/userAgreementPub';
 
 const Dashboard = () => {
   const isAdmin = true;
+  const [agreement] = useAgreementPub()
   return (
     <div className="flex "> 
 <div className="w-64 min-h-screen bg-teal-600">
@@ -33,7 +35,7 @@ const Dashboard = () => {
      </li>
   <li>
      <NavLink to="/dashboard/agreementRequest"><BsFillFileEarmarkRuledFill />
-  Agreement Requests
+  Agreement Requests ({agreement.length})
 </NavLink>
      </li>
   <li>
