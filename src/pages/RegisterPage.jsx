@@ -49,7 +49,7 @@ const axiosPublic = usePublicAxios()
           axiosPublic.post("/users",userInfo)
           .then(response => {
             if(response.data.insertedId){
-              console.log("user added to the database",response.data)
+              // console.log("user added to the database",response.data)
               Swal.fire({
                 title: "Registered Successfully!",
                 icon: "success",

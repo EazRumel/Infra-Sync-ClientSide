@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { MdOutlineDelete } from "react-icons/md";
+import { MdManageAccounts, MdOutlineDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 
 
@@ -36,10 +36,23 @@ const ManageMembers = () => {
             });
           }
         })
-       
       }
     });
       
+  }
+  const handleUpdate = (user) => {
+    axiosSecure.patch(`/users/member/${user._id}`)
+    .then(response=>{
+      console.log(response.data)
+      if(response.data.modifiedCount > 0){
+      Swal.fire({
+  title: `${user.name} is now a member`,
+  icon: "success",
+  draggable: true
+});
+    }
+    })
+    
   }
   return (
     <div >
@@ -55,8 +68,9 @@ const ManageMembers = () => {
 
         <th>Name</th>
         <th>Email</th>
+       <th>Update</th>
         <th>Remove</th>
-        <th></th>
+
       </tr>
     </thead>
     <tbody>
@@ -67,6 +81,11 @@ const ManageMembers = () => {
             <tr key={user._id}>
               <td>{user.userName}</td>
               <td>{user.userEmail}</td>
+               <td>
+               {
+                 user.role==="member" ? <p className="text-teal-400 font-light text-l">Member</p> :  <button onClick={()=>handleUpdate(user)} className="btn ml-10 bg-blue-800 text-white"><MdManageAccounts /></button>
+               }
+              </td>
               <td>
                 <button onClick={()=>handleRemove(user)} className="btn bg-red-500 text-white"><MdOutlineDelete /></button>
               </td>
