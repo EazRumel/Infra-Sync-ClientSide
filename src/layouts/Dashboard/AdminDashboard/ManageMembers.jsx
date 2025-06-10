@@ -40,20 +40,22 @@ const ManageMembers = () => {
     });
       
   }
-  const handleUpdate = (user) => {
-    axiosSecure.patch(`/users/member/${user._id}`)
-    .then(response=>{
-      console.log(response.data)
-      if(response.data.modifiedCount > 0){
-      Swal.fire({
-  title: `${user.name} is now a member`,
-  icon: "success",
-  draggable: true
-});
-    }
-    })
+//   const handleUpdate = (user) => {
+//     axiosSecure.patch(`/users/member/${user._id}`)
     
-  }
+//     .then(response=>{
+//       console.log(response.data)
+//       if(response.data.modifiedCount > 0){
+//         refetch()
+//       Swal.fire({
+//   title: `${user.userName} is now a member`,
+//   icon: "success",
+//   draggable: true
+// });
+//     }
+//     })
+    
+//   }
   return (
     <div >
     <h2 className="text-3xl text-teal-500 text-center">Manage Members</h2>
@@ -68,7 +70,7 @@ const ManageMembers = () => {
 
         <th>Name</th>
         <th>Email</th>
-       <th>Update</th>
+       {/* <th>Update</th> */}
         <th>Remove</th>
 
       </tr>
@@ -81,11 +83,11 @@ const ManageMembers = () => {
             <tr key={user._id}>
               <td>{user.userName}</td>
               <td>{user.userEmail}</td>
-               <td>
+               {/* <td>
                {
                  user.role==="member" ? <p className="text-teal-400 font-light text-l">Member</p> :  <button onClick={()=>handleUpdate(user)} className="btn ml-10 bg-blue-800 text-white"><MdManageAccounts /></button>
                }
-              </td>
+              </td> */}
               <td>
                 <button onClick={()=>handleRemove(user)} className="btn bg-red-500 text-white"><MdOutlineDelete /></button>
               </td>
