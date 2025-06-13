@@ -56,7 +56,7 @@ const AuthProvider = ({children}) => {
     return () => {
      return unsubscribe();
     }
-  },[])
+  },[axiosPublic]) //used axiosPublic as dependency
    const authInfo = {
    user,
    setUser,
