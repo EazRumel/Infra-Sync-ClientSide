@@ -3,6 +3,7 @@ import useAgreementPub from '../hooks/userAgreementPub';
 import { MdTextRotateVertical } from 'react-icons/md';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
 // import useAgreement from '../hooks/useAgreement';
 
 
@@ -11,6 +12,13 @@ const MyAgreement = () => {
 
   const [agreement,refetch] = useAgreementPub();
   const axiosSecure = useAxiosSecure();
+  // const { data: users = [""], refetch } = useQuery({
+  //   queryKey: ["users"],
+  //   queryFn: async () => {
+  //     const response = await axiosSecure.get("/users")
+  //     return response.data
+  //   }
+  // })
   const totalRent = agreement.reduce((total,item) => total + item.rent,0) //this accumulates and calculates the whole rent.that's why reduce is being used.
   const handleReject = (id) => {
 
@@ -41,6 +49,24 @@ const MyAgreement = () => {
 });
 
   }
+
+  // const handleUpdate = (id) => {
+  //     axiosSecure.patch(`/users/member/${user._id}`)
+  //     .then(response=>{
+  //       console.log(response.data)
+  //       if(response.data.modifiedCount > 0){
+  //         refetch()
+  //       Swal.fire({
+  //   title: `${user.userName} is now a member`,
+  //   icon: "success",
+  //   draggable: true
+  // });
+  //     }
+  //     })
+   
+  //   }
+
+  
 
   
   // const [agreements,setAgreements] = useState(0)

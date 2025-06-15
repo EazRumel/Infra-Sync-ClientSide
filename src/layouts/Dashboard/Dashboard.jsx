@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import useAgreement from '../../hooks/useAgreement';
-import { FaHome, FaRegThumbsUp } from 'react-icons/fa';
+import { FaHistory, FaHome, FaRegThumbsUp } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
 import { GrAnnounce } from 'react-icons/gr';
-import { MdAdminPanelSettings, MdRememberMe } from 'react-icons/md';
+import { MdAdminPanelSettings, MdOutlinePayment, MdRememberMe } from 'react-icons/md';
 import { BsFillFileEarmarkRuledFill } from 'react-icons/bs';
 import { RiCoupon3Line } from 'react-icons/ri';
 import { CiHome } from 'react-icons/ci';
@@ -13,14 +13,15 @@ import useAgreementPub from '../../hooks/userAgreementPub';
 
 const Dashboard = () => {
   const isAdmin = true;
+
   const [agreement] = useAgreementPub()
   return (
     <div className="flex "> 
 <div className="w-64 min-h-screen bg-teal-600">
- <ul className="menu p-4">
-
+ 
   { 
-    isAdmin ? <>
+    isAdmin ?
+   <ul className="menu p-4">
    
     <li>
   <NavLink to="/"><MdAdminPanelSettings />Admin Profile</NavLink>
@@ -44,10 +45,9 @@ const Dashboard = () => {
 </NavLink>
      </li>
      <div className="divider"></div>
-     <li><NavLink to="/"><GoHomeFill />Home</NavLink></li>
-    </>
+    </ul>
      : 
-     <>
+     <ul className="menu p-4">
     <li>
   <NavLink to="/"><FaHome />My Home</NavLink>
   </li>
@@ -60,10 +60,14 @@ const Dashboard = () => {
 </NavLink>
      </li>
      <div className="divider"></div>
-    </>
+    </ul>
+
   }
 
- </ul>
+
+ 
+  
+ 
 </div>
 <div>
   <Outlet></Outlet>
